@@ -224,7 +224,7 @@ python checkdatavoc.py
 
 ## 注意事项
 
-1. **数据集下载**: 完整项目（含数据集）可通过百度网盘获取，链接见原 README
+1. **数据集下载**: https://github.com/VisDrone/VisDrone-Dataset
 2. **实验数据**: 页面显示的 mAP@0.5: 0.462 为标称性能，实际结果可能有所差异
 3. **GPU 支持**: 推荐使用 NVIDIA 显卡以获得最佳性能，CUDA 11.x+ 推荐
 4. **路径配置**: 首次运行可能需要根据实际环境调整模型路径
