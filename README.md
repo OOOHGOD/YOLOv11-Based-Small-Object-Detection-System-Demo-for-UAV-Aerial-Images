@@ -10,3 +10,5 @@ https://pan.baidu.com/s/18q3HCUhYEjuva-T54DFuKg?pwd=2026 提取码: 2026
 This undergraduate graduation design adopts PyQt5 for GUI development. Based on YOLOv11, PPA attention module and SAHI strategy are integrated to detect small targets in VisDrone2019 UAV datasets.
 
 **Supplement note:** The experimental data is not fully authentic, and actual performance fails to reach the displayed level. This program is mainly for graduation assessment.
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/df52701c-69f0-4664-8dbe-2ae4e9f89a33" />
