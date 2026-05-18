@@ -1,0 +1,104 @@
+/* 整体默认字体设置 */
+* {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", "Arial", sans-serif;
+    font-size: 10pt;
+}
+
+/* 整体背景颜色 */
+#MainWindow {
+    background-color: #f8f9fa;
+}
+
+/* GroupBox 样式 */
+QGroupBox {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-top: 1.2em;
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 15px;
+    padding: 0 8px;
+    color: #0d6efd;
+}
+
+/* 按钮通用样式 */
+QPushButton {
+    background-color: #0d6efd;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+QPushButton:hover {
+    background-color: #0b5ed7;
+    border: 1px solid #0a58ca;
+}
+
+QPushButton:pressed {
+    background-color: #0a58ca;
+}
+
+/* 特殊按钮样式 - 保存和退出 */
+QPushButton#SaveBtn {
+    background-color: #198754;
+}
+
+QPushButton#SaveBtn:hover {
+    background-color: #157347;
+}
+
+QPushButton#ExitBtn {
+    background-color: #dc3545;
+}
+
+QPushButton#ExitBtn:hover {
+    background-color: #bb2d3b;
+}
+
+/* 表格样式 */
+QTableWidget {
+    border: 1px solid #e9ecef;
+    background-color: #ffffff;
+    gridline-color: #f1f3f5;
+    border-radius: 8px;
+    outline: none;
+}
+
+QHeaderView::section {
+    background-color: #f8f9fa;
+    padding: 6px;
+    border: 1px solid #e9ecef;
+    font-weight: bold;
+    color: #495057;
+}
+
+/* 输入框和下拉框 */
+QLineEdit, QComboBox, QDoubleSpinBox {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 4px 8px;
+    background-color: #ffffff;
+    min-height: 24px;
+}
+
+QLineEdit:focus, QComboBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #86b7fe;
+    outline: none;
+}
+
+/* 标题样式 */
+#label_3 {
+    color: #212529;
+    font-size: 32pt;
+    font-weight: 800;
+    background-color: transparent;
+    padding: 10px;
+}
+

@@ -1,0 +1,23 @@
+# VisDrone2019-DET dataset for Google Colab
+# Documentation: https://docs.ultralytics.com/datasets/detect/visdrone/
+
+# Dataset root dir (Google Drive path)
+path: /content/drive/MyDrive/Mydatasets/VisDrone2019
+
+# Train/val/test sets
+train: VisDrone2019-DET-train/images
+val: VisDrone2019-DET-val/images
+# test: VisDrone2019-DET-test-dev/images # optional
+
+# Classes
+names:
+  0: pedestrian
+  1: people
+  2: bicycle
+  3: car
+  4: van
+  5: truck
+  6: tricycle
+  7: awning-tricycle
+  8: bus
+  9: motor
