@@ -30,7 +30,7 @@ This undergraduate graduation design adopts PyQt5 for GUI development. Based on 
 
 ```
 YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images/
-├── 航拍视角目标检测系统/          # 主程序 GUI 应用
+├── UAV Aerial Perspective Small Target Detection System/  # 主程序 GUI 应用
 │   ├── MainProgram.py            # 主窗口程序入口
 │   ├── Config.py                 # 配置文件
 │   ├── detect_tools.py           # 检测工具函数
@@ -98,7 +98,7 @@ YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images/
 ## 安装依赖
 
 ```bash
-cd 航拍视角目标检测系统
+cd UAV Aerial Perspective Small Target Detection System
 pip install -r requirements.txt
 ```
 
@@ -118,7 +118,7 @@ pip install -r requirements.txt
 ### 启动 GUI 程序
 
 ```bash
-cd 航拍视角目标检测系统
+cd UAV Aerial Perspective Small Target Detection System
 python MainProgram.py
 ```
 
