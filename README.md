@@ -3,7 +3,7 @@
 
 **补充说明：** 实验数据并非完全真实可靠，实际检测性能未能达到展示效果，该程序仅用于毕业设计考核使用。
 
-**完整项目链接（百度网盘）：**
+**完整项目链接（包含数据集）：**
 https://pan.baidu.com/s/18q3HCUhYEjuva-T54DFuKg?pwd=2026 提取码: 2026 
 --来自百度网盘超级会员v5的分享
 # YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images
