@@ -1,6 +1,83 @@
-[English](README.md) | **简体中文**
+<div align="center">
 
-# 基于YOLOv11的无人机航拍图像小目标检测系统Demo
+# UAV 航拍小目标检测
+
+融合 YOLO11、PPA 与 SAHI 的航拍图像检测实验。
+
+[English](README.md) · **简体中文**
+
+![YOLO11](https://img.shields.io/badge/YOLO11-111827?style=flat-square) ![SAHI](https://img.shields.io/badge/SAHI-334155?style=flat-square) ![PyQt5](https://img.shields.io/badge/PyQt5-41CD52?style=flat-square) [![MIT License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)](LICENSE)
+
+</div>
+
+<p align="center">
+<a href="#项目概览">项目概览</a> · <a href="#快速开始">快速开始</a> · <a href="#dataset-与训练">Dataset 与训练</a> · <a href="#作者与许可">作者与许可</a>
+</p>
+
+---
+
+> **项目定位** · 毕业设计与 GUI 演示
+
+
+## 项目概览
+
+面向 UAV 航拍图像的小目标检测毕业设计，包含 YOLO11 / PPA 实验、SAHI Sliced Inference，以及 PyQt5 桌面界面。
+
+## 功能与结构
+
+| 目录 / 文件 | 用途 |
+| --- | --- |
+| `UAV Aerial Perspective Small Target Detection System/` | GUI、图像 / 视频 / Camera 处理、模型配置与推理工具 |
+| `ultralytics-main-yolo11-improve/` | 上游源码、PPA 配置、训练与 SAHI 评估实验 |
+| `SSD-master/`、`pytorch-ssd-master/` | 第三方 SSD 对比实现 |
+| `train11.py`、`train8.py`、`trainssd.py` | 补充实验 |
+| `visdrone.yaml` 与转换脚本 | Dataset 配置与标注准备 |
+
+界面支持单图、批量、视频和 Camera 检测，提供 Confidence、IoU、模型选择和 CPU / GPU 配置。GUI 与实验脚本是不同入口，对比结果时需确认各自使用的模型。
+
+## 快速开始
+
+创建并激活虚拟环境后运行：
+
+```bash
+cd "UAV Aerial Perspective Small Target Detection System"
+python -m pip install -r requirements.txt
+python MainProgram.py
+```
+
+启动前检查 `Config.py`：默认模型为 `models\best.pt`，结果目录为 `save_data`。请准备兼容 checkpoint；标准 Ultralytics 安装不一定包含实验权重所需的自定义模块。
+
+## Dataset 与训练
+
+实验使用 VisDrone2019，类别为 `pedestrian`、`people`、`bicycle`、`car`、`van`、`truck`、`tricycle`、`awning-tricycle`、`bus`、`motor`。
+
+准备经过授权的数据，并修改 YAML 与脚本路径。原项目[完整材料分享链接](https://pan.baidu.com/s/18q3HCUhYEjuva-T54DFuKg?pwd=2026)的提取码为 `2026`，链接可用性和内容授权需另行确认。
+
+从仓库根目录进入实验目录：
+
+```bash
+cd ultralytics-main-yolo11-improve
+python train_v11.py
+```
+
+先检查 `model_yaml_path` 与 `data_yaml_path`，按实际需要启用 Baseline 或 PPA 配置。输出目录名称不代表当前激活的模型配置。
+
+`val_sahi.py` 用于 Sliced Inference 评估，`contrast_yolov11_ppa_sahi.py` 用于对比实验；运行前检查 Dataset、checkpoint 与环境。
+
+## 结果与上游授权
+
+原英文说明明确指出，展示实验值并非全部真实，实际表现未达到展示水平。因此本页不将这些数值视为经过验证的 Benchmark；需要在明确的数据划分上独立评估。
+
+原有 MIT 声明不覆盖 Ultralytics 的 AGPL 内容和 SSD 项目的上游许可。第三方源码、权重和 VisDrone 数据需按各自条款使用，详见 `LICENSE_SCOPE.md`。
+
+
+## 历史资料
+
+> 以下折叠内容保留原有课程 / 竞赛材料。旧路径、示例和展示指标以历史版本为背景；运行时请优先采用上方说明。
+
+<details>
+<summary>展开原有设计与实验说明</summary>
+
 本次设计采用PyQt5完成图形界面开发，以YOLOv11算法为基础，融合PPA注意力模块与SAHI切片推理策略，实现对VisDrone2019无人机数据集中小目标的检测。
 
 **补充说明：** 实验结果可能因为随机种子与训练环境等因素影响，该程序仅用于毕业设计考核使用。
@@ -8,17 +85,17 @@
 **完整项目链接（包含数据集）：**
 https://pan.baidu.com/s/18q3HCUhYEjuva-T54DFuKg?pwd=2026 提取码: 2026 
 --来自百度网盘超级会员v5的分享
-# YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images
+### YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images
 This undergraduate graduation design adopts PyQt5 for GUI development. Based on YOLOv11, PPA attention module and SAHI strategy are integrated to detect small targets in VisDrone2019 UAV datasets.
 
 **Supplement note:** The experimental data is not fully authentic, and actual performance fails to reach the displayed level. This program is mainly for graduation assessment.
 ---
 
-## 项目概述
+### 项目概述
 
 本项目是一个基于深度学习的无人机航拍图像小目标检测系统，采用 YOLOv11 作为基础检测模型，结合 PPA（PPAttention）注意力模块和 SAHI 切片推理策略，针对 VisDrone2019 无人机数据集进行优化。
 
-### 核心特性
+#### 核心特性
 
 - **YOLOv11 基础模型**: 采用 Ultralytics YOLOv11 作为检测骨干
 - **PPA 注意力模块**: 在 Backbone 和 Neck 部分集成 PPA 注意力机制，增强特征提取能力
@@ -28,7 +105,7 @@ This undergraduate graduation design adopts PyQt5 for GUI development. Based on 
 
 ---
 
-## 项目结构
+### 项目结构
 
 ```
 YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images/
@@ -56,7 +133,7 @@ YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images/
 
 ---
 
-## 支持的检测类别
+### 支持的检测类别
 
 | ID | 英文名称 | 中文名称 |
 |----|----------|----------|
@@ -73,38 +150,38 @@ YOLOv11-Based-Small-Object-Detection-System-Demo-for-UAV-Aerial-Images/
 
 ---
 
-## 功能特点
+### 功能特点
 
-### 1. 多模式检测
+#### 1. 多模式检测
 - **单图检测**: 支持 JPG、PNG、BMP 等格式图片
 - **批量图片检测**: 支持文件夹批量处理，自动遍历所有图片
 - **视频检测**: 支持 AVI、MP4、WMV、MKV 等格式视频
 - **摄像头检测**: 支持实时摄像头画面检测
 
-### 2. 参数可调
+#### 2. 参数可调
 - **置信度阈值**: 0.0 ~ 1.0 可调
 - **IOU 阈值**: 0.0 ~ 1.0 可调
 - **显示标签**: 可开关检测框标签显示
 - **显示原图**: 可切换原图/检测结果视图
 
-### 3. 导航功能
+#### 3. 导航功能
 - 批量图片/视频帧切换浏览
 - 上一张/下一张便捷按钮
 
-### 4. 模型管理
+#### 4. 模型管理
 - 支持加载自定义 YOLO 模型文件 (.pt)
 - 设备切换 (GPU/CPU)
 
 ---
 
-## 安装依赖
+### 安装依赖
 
 ```bash
 cd UAV Aerial Perspective Small Target Detection System
 pip install -r requirements.txt
 ```
 
-### 主要依赖
+#### 主要依赖
 
 - Python >= 3.8
 - PyQt5 >= 5.15.2
@@ -115,23 +192,23 @@ pip install -r requirements.txt
 
 ---
 
-## 使用方法
+### 使用方法
 
-### 启动 GUI 程序
+#### 启动 GUI 程序
 
 ```bash
 cd UAV Aerial Perspective Small Target Detection System
 python MainProgram.py
 ```
 
-### 训练自己的模型
+#### 训练自己的模型
 
 ```bash
 cd ultralytics-main-yolo11-improve
 python train_v11.py
 ```
 
-### 对比实验
+#### 对比实验
 
 ```bash
 cd ultralytics-main-yolo11-improve
@@ -140,9 +217,9 @@ python contrast_yolov11_ppa_sahi.py
 
 ---
 
-## 模型配置说明
+### 模型配置说明
 
-### PPA 模块消融实验配置
+#### PPA 模块消融实验配置
 
 在 `train_v11.py` 中可选择不同的模型配置：
 
@@ -157,7 +234,7 @@ model_yaml_path = r"ultralytics\cfg\models\11\yolo11-backbone-PPA.yaml"
 model_yaml_path = r"ultralytics\cfg\models\11\yolo11-neck-PPA.yaml"
 ```
 
-### 模型规模对比
+#### 模型规模对比
 
 | 模型 | 参数数量 | FLOPs |
 |------|----------|-------|
@@ -168,17 +245,17 @@ model_yaml_path = r"ultralytics\cfg\models\11\yolo11-neck-PPA.yaml"
 
 ---
 
-## 数据集说明
+### 数据集说明
 
 本项目使用 [VisDrone2019](http://aiskyeye.com/) 无人机航拍数据集。
 
-### 数据集划分
+#### 数据集划分
 
 - **训练集**: VisDrone2019-DET-train (约 6k 张图片)
 - **验证集**: VisDrone2019-DET-val (约 1k 张图片)
 - **测试集**: VisDrone2019-DET-test-dev
 
-### 数据格式
+#### 数据格式
 
 支持 VOC 格式和 YOLO 格式转换：
 
@@ -192,7 +269,7 @@ python checkdatavoc.py
 
 ---
 
-## 项目截图&演示文稿
+### 项目截图&演示文稿
 
 系统提供直观的图形界面，包括：
 - 主显示区域：实时显示检测结果
@@ -224,7 +301,7 @@ python checkdatavoc.py
 <img width="49%" src="https://github.com/user-attachments/assets/12054138-ba9e-41a9-aa3d-d1aa3603e31a" />
 ---
 
-## 注意事项
+### 注意事项
 
 1. **数据集下载**: https://github.com/VisDrone/VisDrone-Dataset
 2. **实验数据**: 页面显示的 mAP@0.5: 0.462 为标称性能，实际结果可能有所差异
@@ -233,7 +310,7 @@ python checkdatavoc.py
 
 ---
 
-## 参考资源
+### 参考资源
 
 - [Ultralytics YOLOv11](https://github.com/ultralytics/ultralytics)
 - [SAHI - Slicing Aided Hyper Inference](https://github.com/obss/sahi)
@@ -241,14 +318,14 @@ python checkdatavoc.py
 
 ---
 
-## 许可证
+### 许可证
 
 MIT License
 
+</details>
 
+## 作者与许可
 
-## 作者与许可证
+作者 / 维护者：[OOOHGOD](https://github.com/OOOHGOD) · 原创贡献：[MIT License](LICENSE)
 
-作者/维护者：[https://github.com/OOOHGOD](https://github.com/OOOHGOD)。
-
-原创贡献采用 [MIT 许可证](LICENSE)，允许商用和修改；分发软件副本或实质部分时须保留版权与许可声明。第三方代码、数据、模型和媒体素材保留各自权利，详见 [LICENSE_SCOPE.md](LICENSE_SCOPE.md)。
+允许商用和修改；分发软件副本或实质部分时，须保留版权与许可声明。第三方代码、数据、模型和媒体素材保留各自权利，详见 [许可适用范围](LICENSE_SCOPE.md)。

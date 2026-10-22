@@ -1,11 +1,28 @@
-**English** | [简体中文](README.zh-CN.md)
+<div align="center">
 
-# UAV Small-Object Detection with YOLO11, PPA, and SAHI
+# UAV Small-Object Detection
+
+YOLO11, PPA, and SAHI experiments for aerial imagery.
+
+**English** · [简体中文](README.zh-CN.md)
+
+![YOLO11](https://img.shields.io/badge/YOLO11-111827?style=flat-square) ![SAHI](https://img.shields.io/badge/SAHI-334155?style=flat-square) ![PyQt5](https://img.shields.io/badge/PyQt5-41CD52?style=flat-square) [![MIT License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)](LICENSE)
+
+</div>
+
+<p align="center">
+<a href="#overview">Overview</a> · <a href="#setup-and-gui">Setup and GUI</a> · <a href="#features-and-structure">Features and structure</a> · <a href="#author--license">Author &amp; License</a>
+</p>
+
+---
+
+> **Project focus** · Educational Demo
+
+
+## Overview
 
 An undergraduate project exploring UAV small-object detection, with YOLO11/PPA experiments, SAHI sliced inference, and a PyQt5 desktop interface.
 
-**Category:** Artificial Intelligence · Computer Vision  
-**Stack:** Python · PyTorch · Ultralytics · SAHI · OpenCV · PyQt5
 
 ## Features and structure
 
@@ -54,8 +71,8 @@ The [Chinese README](README.zh-CN.md) preserves original screenshots and experim
 
 The pre-existing root MIT notice does not replace the vendored Ultralytics AGPL notices or bundled SSD licenses. The repository does not provide blanket MIT permission for upstream source, weights, or VisDrone data. See `LICENSE_SCOPE.md` before redistribution or combined use.
 
-## Author and license
+## Author & License
 
-Author / maintainer: [https://github.com/OOOHGOD](https://github.com/OOOHGOD).
+Author / maintainer: [OOOHGOD](https://github.com/OOOHGOD) · Original contributions: [MIT License](LICENSE)
 
-Eligible original contributions are under the [MIT License](LICENSE), permitting commercial use and modification with preservation of copyright and license notices in copies or substantial portions. [License scope](LICENSE_SCOPE.md) explains third-party exclusions and upstream terms.
+Commercial use and modification are permitted with preservation of copyright and license notices in copies or substantial portions. Third-party code, datasets, models, and media retain their own terms; see [license scope](LICENSE_SCOPE.md).
